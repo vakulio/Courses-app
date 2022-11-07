@@ -1,9 +1,10 @@
 html,
 body {
+  color: var(--black);
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: #F5f6f8;
+  font-family: "Noto Sans", sans-serif;
 }
 
 a {
@@ -15,12 +16,12 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+:root {
+  --black: #3b434e;
+  --white: #fff;
+  --primery: #7653FC;
+  --red: #FC8360;
+  --green: #1DC37E;
+  --green-light: #C8F8E4;
+  --font-family: "Noto Sans", sans-serif;
 }
