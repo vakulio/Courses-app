@@ -6,9 +6,6 @@
     gap: 20px;
 }
 
-.wrapper {
-    margin-top: 40px;
-}
 
 .hhTitle {
     display: grid;
@@ -17,3 +14,27 @@
     justify-items: left;
     gap: 20px;
 }
+
+
+.seoText h1 {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 35px;
+    margin: 0;
+}
+
+.seoText h2 {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 30px;
+    margin: 50px;
+    margin-bottom: 25px;
+}
+
+.seoText h3 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    margin: 0;
+}
+
