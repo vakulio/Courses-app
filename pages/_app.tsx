@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 	return (
 		<>
 			<Head>
-				<title>TopUP</title>
+				<title>Courses - Курсы для себя</title>
 			</Head>
 
 			<Component {...pageProps} />

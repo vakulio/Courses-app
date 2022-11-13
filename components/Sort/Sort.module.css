@@ -12,6 +12,10 @@
     margin-right: 8px;
 }
 
+.active .sortIcon rect{
+    fill: var(--primary)
+}
+
 .sort {
     display: inline-block;
     display: grid;

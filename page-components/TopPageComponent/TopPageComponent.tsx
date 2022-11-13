@@ -2,7 +2,7 @@ import React, { useReducer } from "react"
 import { TopPageComponentProps } from "./TopPageComponent.props"
 import styles from "./TopPageComponent.module.css"
 import cn from "classnames"
-import { Advantages, HhData, Htag, Ptag, Sort, Tag } from "../../components"
+import { Advantages, HhData, Htag, Product, Sort, Tag } from "../../components"
 import { TopLevelCategory } from "../../interfaces/page.interface"
 import parse from "html-react-parser"
 import { SortEnum } from "../../components/Sort/Sort.props"
@@ -28,7 +28,9 @@ export const TopPageComponent = ({ products, page, firstCategory }: TopPageCompo
 				)}
 				<Sort sort={sort} setSort={setSort}/>
 			</div>
-			<div>{sortedProducts && sortedProducts.map((p) => <div key={p._id}>{p.title}</div>)}</div>
+			<div>
+				{sortedProducts && products.map((p) => <Product product={p} key={p._id}/>)}
+				</div>
 			<div className={styles.hhTitle}>
 				<Htag tag="h2">Вакансии - {page.category}</Htag>
 				{products && (
