@@ -38,11 +38,7 @@
 }
 
 .secondLevelBlock {
-    display: none;
-}
-
-.secondLevelBlockOpen:last-child {
-    display: block;
+    overflow: hidden;
 }
 
 

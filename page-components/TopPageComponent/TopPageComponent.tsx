@@ -1,4 +1,4 @@
-import React, { useReducer } from "react"
+import React, { useEffect, useReducer } from "react"
 import { TopPageComponentProps } from "./TopPageComponent.props"
 import styles from "./TopPageComponent.module.css"
 import cn from "classnames"
@@ -16,6 +16,12 @@ export const TopPageComponent = ({ products, page, firstCategory }: TopPageCompo
 	const setSort = (sort: SortEnum) => {
 		dispathSort({type: sort})
 	}
+
+
+	useEffect(() => {
+		dispathSort({type: "reset", initialState: products})
+	}, [products])
+
 
 	return (
 		<div className={styles.wrapper}>
