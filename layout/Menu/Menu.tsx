@@ -69,8 +69,8 @@ export const Menu = (): JSX.Element => {
 	const buildThirdLevel = (pages: PageItem[], route: string) => {
 		return (
 			pages.map(p => (
-				<Link href={`/${route}/${p.alias}`}>
-					<a key={p._id} className={cn(styles.thirdLevel, {
+				<Link key={p._id} href={`/${route}/${p.alias}`}>
+					<a className={cn(styles.thirdLevel, {
 										[styles.thirdLevelActive] : `/${route}/${p.alias}` == router.asPath
 									})}>{p.category}</a>
 				</Link>

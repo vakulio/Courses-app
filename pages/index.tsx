@@ -11,12 +11,11 @@ interface HomeProps extends Record<string, any> {
 }
 
 function Home({ menu }:HomeProps): JSX.Element {
+	const [count, setCount] = useState(1)
 
 	return (
 		<>
-			{/* <ul>
-				{menu.map(m => (<li key={m._id.secondCategory}>{m._id.secondCategory}</li>))}
-			</ul> */}
+			{/* <Rating rating={0} isEditable setRating={setCount}/> */}
 		</>
 	)
 }
