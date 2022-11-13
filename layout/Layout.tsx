@@ -6,12 +6,14 @@ import { Header } from "./Header/Header";
 import { Footer } from "./Footer/Footer";
 import { Sidebar } from "./Sidebar/Sidebar";
 import { AppContextProvider, IAppContext } from "../context/app.context";
+import { ThemeButton } from "./ThemeButton/ThemeButton";
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
    
     return (
         <div className={styles.wrapper}>
             <Header className={styles.header}/>
+                <ThemeButton/>
                 <Sidebar className={styles.sidebar}/>
                 <div className={styles.body}>
                     {children}
