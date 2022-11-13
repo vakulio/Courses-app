@@ -5,6 +5,5 @@
 }
 
 .blue {
-    background: #F9F8FF;
+    background: var(--blue-card);
 }
-

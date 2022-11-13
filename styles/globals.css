@@ -8,9 +8,12 @@ body {
 }
 
 .dark {
-  color: white;
   background: #1a2233;
-  --white: #28344d;
+  --black: #b1aaaa;
+  --white: rgb(40, 39, 44);
+  --gray-light: #dfc7c7;
+  --blue-card: rgb(70, 68, 77);
+  --gray: #535050;
 }
 
 a {
@@ -25,6 +28,7 @@ a {
 :root {
   --black: #3b434e;
   --gray-light: #dfc7c7;
+  --blue-card: #F9F8FF;
   --gray: #a4a4a4;
   --gray-dark: #787D85;
   --white: #fff;

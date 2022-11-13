@@ -15,20 +15,15 @@ export const ThemeButton = ({children, className, ...props}: ThemeButtonProps): 
     function toggleThemeHandler(): void {
         themeCtx.toggleThemeHandler();
     }
-    const isDarkTheme: boolean = JSON.parse(
-        localStorage.getItem("isDarkTheme")!
-      );
-    console.log(isDarkTheme)
+   
     return (
         <button
         onClick={toggleThemeHandler}
-        className={cn(styles.button, {
-            [styles.light] : !isDarkTheme,
-            [styles.dark] : isDarkTheme
-        })}
+        className={cn(styles.button)}
+
         {...props}
         >
-            {isDarkTheme ? <span className={styles.sun}><SunIcon/></span> : <span className={styles.moon}><MoonIcon/></span> }
+            <span className={styles.sun}><SunIcon/></span>
         </button>
     )
 
