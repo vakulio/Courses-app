@@ -20,7 +20,6 @@ export const ThemeButton = ({children, className, ...props}: ThemeButtonProps): 
         <button
         onClick={toggleThemeHandler}
         className={cn(styles.button)}
-
         {...props}
         >
             <span className={styles.sun}><SunIcon/></span>

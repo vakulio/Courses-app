@@ -3,12 +3,12 @@ body {
   color: var(--black);
   padding: 0;
   margin: 0;
-  background: #F5f6f8;
+  background: var(--body);
   font-family: "Noto Sans", sans-serif;
 }
 
 .dark {
-  background: #1a2233;
+  --body: #1a2233;
   --black: #b1aaaa;
   --white: rgb(40, 39, 44);
   --gray-light: #dfc7c7;
@@ -26,6 +26,7 @@ a {
 }
 
 :root {
+  --body: #F5f6f8;
   --black: #3b434e;
   --gray-light: #dfc7c7;
   --blue-card: #F9F8FF;
