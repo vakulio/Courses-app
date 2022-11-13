@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { ReviewFormProps } from "./ReviewForm.props"
 import styles from "./ReviewForm.module.css"
 import cn from "classnames"
@@ -8,13 +8,28 @@ import { Textarea } from "../Textarea/Textarea"
 import { Button } from "../Button/Button"
 import CloseSVG from "./Close.svg"
 import { useForm, Controller } from "react-hook-form"
-import { IReviewForm } from "./ReviewForm.interface"
+import { IReviewForm, IReviewSentResponce } from "./ReviewForm.interface"
+import axios from "axios"
+import { API } from "../../helpers/api"
 
 export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps): JSX.Element => {
-	const { register, control, handleSubmit, formState: {errors} } = useForm<IReviewForm>()
+	const { register, control, handleSubmit, formState: {errors}, reset } = useForm<IReviewForm>()
+    const [isSuccess, setIsSuccess] = useState<boolean>(false)
+    const [isError, setError] = useState<string>()
 
-    const onSubmit = (data: IReviewForm) => {
-        console.log(data)
+    const onSubmit = async (formData: IReviewForm) => {
+        try {
+            const { data } = await axios.post<IReviewSentResponce>(API.review.createDemo, {...formData, productId})
+            if  (data.message) {
+                setIsSuccess(true)
+                reset()
+            } else {
+                setError("Что-то не так")
+            }
+        } catch (error) {
+            setError(error.message)
+        }
+       
     }
 
 	return (
@@ -74,11 +89,15 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
 					<Button appearence="primary">Отправить</Button>
 				</div>
 			</div>
-			<div className={styles.success}>
+			{isSuccess && <div className={styles.success}>
 				<div className={styles.successTitle}>Ваш отзыв отправлен</div>
 				<div>Спасибо, ваш отзыв будет опубликован после проверки.</div>
-				<CloseSVG className={styles.icon} />
-			</div>
+				<CloseSVG className={styles.icon} onClick={() => setIsSuccess(false)}/>
+			</div>}
+            {isError && <div className={styles.error}>
+                "Что-то не так. Попробуйте снова."
+				<CloseSVG className={cn(styles.iconError, styles.icon)} onClick={() => setError(undefined)}/>
+			</div>}
 		</form>
 	)
 }
