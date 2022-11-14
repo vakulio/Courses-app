@@ -1,5 +1,3 @@
-import { useEffect } from "react"
-import { Htag, Button, Ptag, Tag, Rating } from "../components"
 import { withLayout } from "../layout/Layout"
 import axios from "axios"
 import { GetStaticProps, GetStaticPropsContext } from "next"
