@@ -1,7 +1,7 @@
 import { RatingProps } from './Rating.props';
 import styles from './Rating.module.css';
 import cn from 'classnames';
-import StarIcon from './star.svg';
+import StarIcon from './Star.svg';
 import { useEffect, useState, KeyboardEvent, forwardRef, ForwardedRef, useRef } from 'react';
 
 export const Rating = forwardRef(({ isEditable = false, error, rating, setRating, tabIndex, ...props }: RatingProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
