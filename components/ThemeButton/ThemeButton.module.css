@@ -1,16 +1,45 @@
-.button {
-    display: inline-block;
-    cursor: pointer;
-    border-radius: 25px;
-    border: none;
-    padding-top: 2px;
-    width: 35px;
-    height: 35px;
-    justify-content: center;
-    align-items: center;
-}
+.reactSwitchCheckbox {
+	height: 0;
+	width: 0;
+	visibility: hidden;
+  }
+  
+  .reactSwitchLabel {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	cursor: pointer;
+	width: 40px;
+	height: 20px;
+	background: grey;
+	border-radius: 100px;
+	position: relative;
+	transition: background-color .2s;
+  }
+  
+  .reactSwitchLabel .reactSwitchButton {
+	content: '';
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: 20px;
+	height: 16px;
+	border-radius: 45px;
+	transition: 0.2s;
+	background: #fff;
+	box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+  }
+  
+  .reactSwitchCheckbox:checked + .reactSwitchLabel .reactSwitchButton {
+	left: calc(100% - 2px);
+	transform: translateX(-100%);
+  }
+  
+  .reactSwitchLabel:active .reactSwitchButton {
+	width: 60px;
+  }
 
-.sun svg {
-    fill: rgb(207, 193, 0);
-    height: 20px;
-}
+  .text {
+	font-style: italic;
+	font-size: 10px;
+  }

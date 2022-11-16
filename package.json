@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prepare": "husky install",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -30,7 +29,6 @@
     "@typescript-eslint/parser": "^5.40.1",
     "eslint": "^8.26.0",
     "eslint-config-next": "12.3.1",
-    "husky": "^8.0.2",
     "stylelint": "^14.14.0",
     "stylelint-config-standard": "^29.0.0",
     "stylelint-order": "^5.0.0",

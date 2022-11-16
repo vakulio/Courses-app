@@ -12,7 +12,7 @@ export const Sidebar = ({ className, ...props }: SidebarProps): JSX.Element => {
     return (
        <div {...props} className={cn(className, styles.sidebar)} {...props}>
             <Logo/>
-            <ThemeButton/>
+            <ThemeButton label="День/Ночь"/>
             <Search/>
             <Menu/>
        </div>
