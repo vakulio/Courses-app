@@ -2,6 +2,6 @@
 
 API: 'courses-top.ru'
 
-Stack: TypeScript, Next.js.
+Main Stack: TypeScript, Next.js.
 
-Other packages: classnames, axios, date-fns, html-react-parser.
+Other packages: classnames, axios, date-fns, html-react-parser, framer-motion.
