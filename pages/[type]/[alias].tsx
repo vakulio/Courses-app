@@ -10,6 +10,7 @@ import { TopLevelCategory } from "../../interfaces/page.interface"
 import { TopPageComponent } from "../../page-components"
 import { API } from "../../helpers/api"
 import Head from "next/head"
+import { Error404 } from "../404"
 
 interface TopPageProps extends Record<string, any> {
 	menu: MenuItem[]
@@ -18,9 +19,13 @@ interface TopPageProps extends Record<string, any> {
 	products: ProductModel[]
 }
 
-const firstCategory = 0
 
 function TopPage({ firstCategory, products, page }: TopPageProps): JSX.Element {
+
+	if(!page || !products) {
+		return <Error404/>
+	}
+
 	return (
 		<>
 			{page && (

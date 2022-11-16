@@ -1,22 +1,16 @@
-import { useEffect, useState } from "react"
-import { Htag, Button, Ptag, Tag, Rating } from "../components"
+import { Htag, Ptag, Tag } from "../components"
 import { withLayout } from "../layout/Layout"
-import axios from "axios"
-import { GetStaticProps } from "next"
-import { MenuItem } from "../interfaces/menu.interface"
-import { API } from "../helpers/api"
 
-interface HomeProps extends Record<string, any> {
-	menu: MenuItem[]
-	firstCategory: number
-}
 
-function Home({ menu }:HomeProps): JSX.Element {
-	const [count, setCount] = useState(1)
+
+
+function Home(): JSX.Element {
 
 	return (
 		<>
-			{/* <Rating rating={0} isEditable setRating={setCount}/> */}
+			<Htag tag="h1">Это тестовый проект на Next.js</Htag>
+			<Ptag color="primary">Вы можете ознакомиться с ним в моем Github репозитории Vakulio</Ptag>
+			<Tag color="red">Vakula Vladimir</Tag>
 		</>
 	)
 }
@@ -24,17 +18,4 @@ function Home({ menu }:HomeProps): JSX.Element {
 
 export default withLayout(Home)
 
-
-export const getStaticProps: GetStaticProps<HomeProps> =async () => {
-	const firstCategory = 0
-	const { data: menu } = await axios.post<MenuItem[]>(API.topPage.find, {
-		firstCategory
-	} )
-	return {
-		props: {
-			menu,
-			firstCategory
-		}
-	}
-}
 
