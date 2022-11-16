@@ -31,14 +31,14 @@ export interface Blog {
 
 export interface Sravnikus {
     metaTitle: string;
-    metaDescription: string;
+    metaDescription: string;// eslint-disable-next-line
     qas: any[];
     _id: string;
 }
 
 export interface Learningclub {
     metaTitle: string;
-    metaDescription: string;
+    metaDescription: string;// eslint-disable-next-line
     qas: any[];
     _id: string;
 }
@@ -58,8 +58,8 @@ export interface TopPageModel {
     advantages?: TopPageAdvantage[];
     createdAt: Date;
     updatedAt: Date;
-    hh?: HhData;
-    qas: any[];
+    hh?: HhData;// eslint-disable-next-line
+    qas: any[];// eslint-disable-next-line
     addresses: any[];
     categoryOn: string;
     blog: Blog;

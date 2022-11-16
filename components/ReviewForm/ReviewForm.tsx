@@ -1,36 +1,36 @@
-import React, { useState } from "react"
-import { ReviewFormProps } from "./ReviewForm.props"
-import styles from "./ReviewForm.module.css"
-import cn from "classnames"
-import { Rating } from "../Rating/Rating"
-import { Input } from "../Input/Input"
-import { Textarea } from "../Textarea/Textarea"
-import { Button } from "../Button/Button"
-import CloseSVG from "./Close.svg"
-import { useForm, Controller } from "react-hook-form"
-import { IReviewForm, IReviewSentResponce } from "./ReviewForm.interface"
-import axios from "axios"
-import { API } from "../../helpers/api"
+import React, { useState } from "react";
+import { ReviewFormProps } from "./ReviewForm.props";
+import styles from "./ReviewForm.module.css";
+import cn from "classnames";
+import { Rating } from "../Rating/Rating";
+import { Input } from "../Input/Input";
+import { Textarea } from "../Textarea/Textarea";
+import { Button } from "../Button/Button";
+import CloseSVG from "./Close.svg";
+import { useForm, Controller } from "react-hook-form";
+import { IReviewForm, IReviewSentResponce } from "./ReviewForm.interface";
+import axios from "axios";
+import { API } from "../../helpers/api";
 
 export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewFormProps): JSX.Element => {
-	const { register, control, handleSubmit, formState: {errors}, reset } = useForm<IReviewForm>()
-    const [isSuccess, setIsSuccess] = useState<boolean>(false)
-    const [isError, setError] = useState<string>()
+	const { register, control, handleSubmit, formState: {errors}, reset } = useForm<IReviewForm>();
+    const [isSuccess, setIsSuccess] = useState<boolean>(false);
+    const [isError, setError] = useState<string>();
 
     const onSubmit = async (formData: IReviewForm) => {
         try {
-            const { data } = await axios.post<IReviewSentResponce>(API.review.createDemo, {...formData, productId})
+            const { data } = await axios.post<IReviewSentResponce>(API.review.createDemo, {...formData, productId});
             if  (data.message) {
-                setIsSuccess(true)
-                reset()
+                setIsSuccess(true);
+                reset();
             } else {
-                setError("Что-то не так")
+                setError("Что-то не так");
             }
         } catch (error) {
-            setError(error.message)
+            setError(error.message);
         }
        
-    }
+    };
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
@@ -102,5 +102,5 @@ export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewF
 				<CloseSVG className={cn(styles.iconError, styles.icon)} onClick={() => setError(undefined)}/>
 			</div>}
 		</form>
-	)
-}
+	);
+};

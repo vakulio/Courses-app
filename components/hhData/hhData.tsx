@@ -1,9 +1,9 @@
-import React from "react"
-import { HhDataProps } from "./HhData.props"
-import styles from "./HhData.module.css"
-import { Card } from "../Card/Card"
-import RateIcon from "./rate.svg"
-import { priceValue } from "../../helpers/helpers"
+import React from "react";
+import { HhDataProps } from "./HhData.props";
+import styles from "./HhData.module.css";
+import { Card } from "../Card/Card";
+import RateIcon from "./rate.svg";
+import { priceValue } from "../../helpers/helpers";
 
 export const HhData = ({ count, juniorSalary, middleSalary, seniorSalary }: HhDataProps): JSX.Element => {
 
@@ -45,5 +45,5 @@ export const HhData = ({ count, juniorSalary, middleSalary, seniorSalary }: HhDa
 				</div>
 			</Card>
 		</div>
-	)
-}
+	);
+};

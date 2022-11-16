@@ -1,15 +1,15 @@
 import React from "react";
 import { ReviewProps } from "./Review.props";
-import styles from "./Review.module.css"
+import styles from "./Review.module.css";
 import cn from "classnames";
-import UserIcon from "./User.svg"
+import UserIcon from "./User.svg";
 import { format } from "date-fns";
 import {ru} from "date-fns/locale";
 import { Rating } from "../Rating/Rating";
 
 export const Review = ({ review, className, ...props}: ReviewProps): JSX.Element => {
     
-    const {name, title, description, createdAt, rating} = review
+    const {name, title, description, createdAt, rating} = review;
     
     return (
         <div className={cn(styles.review, className)} {...props}>
@@ -28,8 +28,8 @@ export const Review = ({ review, className, ...props}: ReviewProps): JSX.Element
                {description}
             </div>
         </div>
-    )
+    );
 
 
 
-}
+};

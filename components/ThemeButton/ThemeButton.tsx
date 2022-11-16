@@ -1,13 +1,10 @@
 import React, { useContext, useState } from "react";
 import { ThemeButtonProps } from "./ThemeButton.props";
-import styles from "./ThemeButton.module.css"
-import cn from "classnames";
-import SunIcon from "./Sun.svg"
-import MoonIcon from "./Moon.svg"
+import styles from "./ThemeButton.module.css";
 import MyThemeContext from "../../context/theme-context";
 
-export const ThemeButton = ({children, className, label,  ...props}: ThemeButtonProps): JSX.Element => {
-    const [checkbox, setCheckbox] = useState(false)
+export const ThemeButton = ({label}: ThemeButtonProps): JSX.Element => {
+    const [checkbox, setCheckbox] = useState(false);
     
     const themeCtx: { isDarkMode?: boolean; toggleThemeHandler: () => void } =
     useContext(MyThemeContext);
@@ -27,9 +24,10 @@ export const ThemeButton = ({children, className, label,  ...props}: ThemeButton
           type="checkbox"
         />
         <label
-            onClick={(checkbox) => {
-                setCheckbox(checkbox => !checkbox)
-                toggleThemeHandler()
+            onClick={() => {
+
+                setCheckbox(checkbox => !checkbox);
+                toggleThemeHandler();
             }}
           className={styles.reactSwitchLabel}
           htmlFor={`react-switch-new`}
@@ -39,8 +37,8 @@ export const ThemeButton = ({children, className, label,  ...props}: ThemeButton
         </label>
         </div>
       </>
-    )
+    );
 
 
 
-}
+};

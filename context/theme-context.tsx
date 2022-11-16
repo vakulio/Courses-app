@@ -1,7 +1,7 @@
 import { createContext, ReactElement, useEffect, useState } from "react";
 
 const MyThemeContext = createContext({
-  isDarkTheme: false,
+  isDarkTheme: false,// eslint-disable-next-line
   toggleThemeHandler: () => {},
 });
 
@@ -21,13 +21,13 @@ export function MyThemeContextProvider(
 
   function initialThemeHandler(): void {
     if (isLocalStorageEmpty()) {
-      localStorage.setItem("isDarkTheme", `true`);
+      localStorage.setItem("isDarkTheme", `true`);// eslint-disable-next-line
       document!.querySelector("body")!.classList.add("dark");
       setIsDarkTheme(true);
     } else {
-      const isDarkTheme: boolean = JSON.parse(
+      const isDarkTheme: boolean = JSON.parse(// eslint-disable-next-line
         localStorage.getItem("isDarkTheme")!
-      );
+      );// eslint-disable-next-line
       isDarkTheme && document!.querySelector("body")!.classList.add("dark");
       setIsDarkTheme(() => {
         return isDarkTheme;
@@ -36,7 +36,7 @@ export function MyThemeContextProvider(
   }
 
   function toggleThemeHandler(): void {
-    const isDarkTheme: boolean = JSON.parse(
+    const isDarkTheme: boolean = JSON.parse(// eslint-disable-next-line
       localStorage.getItem("isDarkTheme")!
     );
     setIsDarkTheme(!isDarkTheme);
@@ -44,7 +44,7 @@ export function MyThemeContextProvider(
     setValueToLocalStorage();
   }
 
-  function toggleDarkClassToBody(): void {
+  function toggleDarkClassToBody(): void {// eslint-disable-next-line
     document!.querySelector("body")!.classList.toggle("dark");
   }
 

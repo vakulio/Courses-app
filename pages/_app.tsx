@@ -1,18 +1,18 @@
-import { AppProps } from "next/dist/shared/lib/router/router"
-import "../styles/globals.css"
-import Head from "next/head"
-import React from "react"
-import Router from "next/router"
-import { MyThemeContextProvider } from "../context/theme-context"
-import ym, {YMInitializer} from "react-yandex-metrika"
+import { AppProps } from "next/dist/shared/lib/router/router";
+import "../styles/globals.css";
+import Head from "next/head";
+import React from "react";
+import Router from "next/router";
+import { MyThemeContextProvider } from "../context/theme-context";
+import ym, {YMInitializer} from "react-yandex-metrika";
 
 function MyApp({ Component, pageProps, router  }: AppProps): JSX.Element {
 
 	Router.events.on('routeChangeComplete', (url: string) => {
 		if (typeof window !== undefined) {
-			ym("hit", url)
+			ym("hit", url);
 		}
-	})
+	});
 
 	return (
 		<>
@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps, router  }: AppProps): JSX.Element {
 			<Component {...pageProps} />
 			</MyThemeContextProvider>
 		</>
-	)
+	);
 }
 
-export default MyApp
+export default MyApp;

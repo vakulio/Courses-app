@@ -9,7 +9,7 @@ export const Rating = forwardRef(({ isEditable = false, error, rating, setRating
 	const ratingArrayRef = useRef<(HTMLSpanElement | null)[]>([]);
 
 	useEffect(() => {
-		constructRating(rating);
+		constructRating(rating);// eslint-disable-next-line
 	}, [rating, tabIndex]);
 
 	const computeFocus = (r: number, i: number): number => {

@@ -1,6 +1,6 @@
 import React from "react";
 import { PtagProps } from "./Ptag.props";
-import styles from "./Ptag.module.css"
+import styles from "./Ptag.module.css";
 import cn from "classnames";
 
 export const Ptag = ({size = 'small', children}: PtagProps): JSX.Element => {
@@ -11,8 +11,8 @@ export const Ptag = ({size = 'small', children}: PtagProps): JSX.Element => {
             [styles.medium]: size == 'medium',
             [styles.big]: size == 'big',
         })}>{children}</p>
-    )
+    );
 
 
 
-}
+};

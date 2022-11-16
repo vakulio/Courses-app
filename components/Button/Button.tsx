@@ -1,8 +1,8 @@
 import React from "react";
 import { ButtonProps } from "./Button.props";
-import styles from "./Button.module.css"
+import styles from "./Button.module.css";
 import cn from "classnames";
-import ArrowIcon from "./Arrow.svg"
+import ArrowIcon from "./Arrow.svg";
 import { motion } from "framer-motion";
 
 export const Button = ({appearence, children, arrow = 'none', className, ...props}: ButtonProps): JSX.Element => {
@@ -24,8 +24,8 @@ export const Button = ({appearence, children, arrow = 'none', className, ...prop
                 [styles.right]: arrow == 'right'
             })}><ArrowIcon/></span> }
         </motion.button>
-    )
+    );
 
 
 
-}
+};

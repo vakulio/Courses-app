@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useState, KeyboardEvent, useRef } from "react";
 import { LayoutProps } from "./Layout.props";
-import styles from "./Layout.module.css"
+import styles from "./Layout.module.css";
 import cn from "classnames";
 import { Header } from "./Header/Header";
 import { Footer } from "./Footer/Footer";
@@ -10,17 +10,17 @@ import { Up } from "../components";
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
 
-    const [skipLink, setSkipLink] = useState(false)
-    const bodyRef = useRef<HTMLDivElement>(null)
+    const [skipLink, setSkipLink] = useState(false);
+    const bodyRef = useRef<HTMLDivElement>(null);
 
 
     const skipContentAction = (key: KeyboardEvent) => {
 		if (key.code == "Space" || key.code == "Enter") {
-            key.preventDefault()
-			bodyRef.current?.focus()
+            key.preventDefault();
+			bodyRef.current?.focus();
 		}
-        setSkipLink(false)
-    }
+        setSkipLink(false);
+    };
    
     return (
         <div className={styles.wrapper}>
@@ -40,8 +40,8 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
             <Up/>
         </div>
      
-    )
-}
+    );
+};
 
 
 export const withLayout = <T extends Record<string, undefined> & IAppContext>(Component: FunctionComponent<T>) => {
@@ -52,7 +52,7 @@ export const withLayout = <T extends Record<string, undefined> & IAppContext>(Co
                     <Component {...props}/>
                 </Layout>
             </AppContextProvider>
-        )
+        );
 
-    }
-}
+    };
+};

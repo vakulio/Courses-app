@@ -1,6 +1,6 @@
 import { SortProps, SortEnum } from "./Sort.props";
-import styles from "./Sort.module.css"
-import SortIcon from "./Sort.svg"
+import styles from "./Sort.module.css";
+import SortIcon from "./Sort.svg";
 import cn from "classnames";
 
 export const Sort = ({sort, setSort, className, ...props }: SortProps): JSX.Element => {
@@ -18,8 +18,8 @@ export const Sort = ({sort, setSort, className, ...props }: SortProps): JSX.Elem
             })}>
               <SortIcon className={styles.sortIcon}/>По цене</button>
         </div>
-    )
+    );
 
 
 
-}
+};

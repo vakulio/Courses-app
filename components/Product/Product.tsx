@@ -1,15 +1,15 @@
-import React, { ForwardedRef, forwardRef, useRef, useState } from "react"
-import { ProductProps } from "./Product.props"
-import styles from "./Product.module.css"
-import cn from "classnames"
-import { Tag, Card, Rating, Button, Divider, Review, ReviewForm } from "../../components"
-import { decOfNum, priceValue } from "../../helpers/helpers"
-import Image from "next/image"
-import { motion } from "framer-motion"
+import React, { ForwardedRef, forwardRef, useRef, useState } from "react";
+import { ProductProps } from "./Product.props";
+import styles from "./Product.module.css";
+import cn from "classnames";
+import { Tag, Card, Rating, Button, Divider, Review, ReviewForm } from "../../components";
+import { decOfNum, priceValue } from "../../helpers/helpers";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 export const Product = motion(forwardRef(({ product, className, ...props }: ProductProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
-	const [isReviewOpened, setReviewOpened] = useState<boolean>(false)
-    const reviewRef = useRef<HTMLDivElement>(null)
+	const [isReviewOpened, setReviewOpened] = useState<boolean>(false);
+    const reviewRef = useRef<HTMLDivElement>(null);
 
     const variants = {
         visible: {
@@ -20,16 +20,16 @@ export const Product = motion(forwardRef(({ product, className, ...props }: Prod
             opacity: 0,
             height: 0
         }
-    }
+    };
 
     const scrollToReview = () => {
-        setReviewOpened(true)
+        setReviewOpened(true);
         reviewRef.current?.scrollIntoView({
             behavior: "smooth",
             block: "center"
-        })
-		reviewRef.current?.focus()
-    }
+        });
+		reviewRef.current?.focus();
+    };
 
 	return (
 		<div className={className} {...props} ref={ref}>
@@ -112,5 +112,5 @@ export const Product = motion(forwardRef(({ product, className, ...props }: Prod
             </motion.div>
 			
 		</div>
-	)
-}))
+	);
+}));

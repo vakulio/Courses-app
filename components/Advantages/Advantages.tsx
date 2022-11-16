@@ -1,7 +1,6 @@
-import { AdvantagesProps } from "./Advantages.props"
-import styles from "./Advantages.module.css"
-import cn from "classnames"
-import CheckSVG from "./Check.svg"
+import { AdvantagesProps } from "./Advantages.props";
+import styles from "./Advantages.module.css";
+import CheckSVG from "./Check.svg";
 
 
 export const Advantages = ({ advantages }: AdvantagesProps): JSX.Element => {
@@ -18,5 +17,5 @@ export const Advantages = ({ advantages }: AdvantagesProps): JSX.Element => {
 				</div>
 			))}
 		</>
-	)
-}
+	);
+};

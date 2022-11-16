@@ -9,16 +9,16 @@ export interface IAppContext {
 }
 
 
-export const AppContext = createContext<IAppContext>({ menu: [], firstCategory: TopLevelCategory.Courses})
+export const AppContext = createContext<IAppContext>({ menu: [], firstCategory: TopLevelCategory.Courses});
 
 export const AppContextProvider = ({menu, firstCategory, children}: IAppContext & { children: ReactNode}) => {
 
-    const [menuState, setMenuState] = useState<MenuItem[]>(menu)
+    const [menuState, setMenuState] = useState<MenuItem[]>(menu);
     const setMenu = (newMenu: MenuItem[]) => {
-        setMenuState(newMenu)
-    }
+        setMenuState(newMenu);
+    };
 
     return <AppContext.Provider value={{menu: menuState, firstCategory, setMenu}}>
                 {children}
-            </AppContext.Provider>
-}
+            </AppContext.Provider>;
+};

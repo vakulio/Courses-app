@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { HeaderProps } from "./Header.props";
-import styles from "./Header.module.css"
+import styles from "./Header.module.css";
 import cn from "classnames";
 import { ButtonIcon } from "../../components";
-import Logo from "../Logo.svg"
+import Logo from "../Logo.svg";
 import { motion } from "framer-motion";
 import { Sidebar } from "../Sidebar/Sidebar";
 import { useRouter } from "next/router";
 
 export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
 
-    const router = useRouter()
+    const router = useRouter();
 
-    const [open, setOpen] = useState<boolean>(false)
+    const [open, setOpen] = useState<boolean>(false);
 
 
     useEffect(() => {
-        setOpen(false)
-    }, [router])
+        setOpen(false);
+    }, [router]);
 
     const variants = {
         opened: {
@@ -31,7 +31,7 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
             opacity: 0,
             x: '100%'
         }
-    }
+    };
 
     return (
        <header className={cn(className, styles.header)} {...props}>
@@ -47,8 +47,8 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
             </motion.div>
        </header>
        
-    )
+    );
 
 
 
-}
+};
